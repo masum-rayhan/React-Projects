@@ -24,9 +24,12 @@ function Header(){
 }
 
 function MainBody(){
+
+  const whatWeWillLearn = "React JS";
+
   return(
     <div>
-      <p className='text-primary'>In this course, we will learn TaskOPedia!</p>
+      <p className='text-primary'>In this course, we will learn {whatWeWillLearn}!</p>
       <ul>
         <li className='heading1'>Call Ben</li>
         <li>Go to walmart</li>
