@@ -1,27 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./CSS/style.css";
+import Header from './Header';
+import Students from './Student';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-const mainHeaderStyle = {
-  color : "blueviolet",
-  backgroundColor : "lightgray"
-}
-function MainHeader(){
-  return <h1 style ={mainHeaderStyle}>REACT COURSE</h1>;
-}
-function SubHeader(){
-  return <p style={{color:"gray",backgroundColor:"black"}}>This will be an exciting course!</p>;
-}
-function Header(){
-  return (
-  <div>
-    <MainHeader></MainHeader>
-    <SubHeader></SubHeader>
-  </div>
-  );
-}
 
 function MainBody(){
 
@@ -39,23 +22,6 @@ function MainBody(){
       <div>Enter Task <input maxLength={10} readOnly={true} placeholder={"Rayhan"}></input></div>
     </div>
   );
-}
-
-function Students(){
-  const fullName = "Masum Rayhan";
-  const programmimngExp = 2;
-  return(
-    <div className = "container p-4">
-      <div className="row">Student Enrolled</div>
-      <div className="row border">
-        <div className="col-2">Image</div>
-        <div className="col-10">
-          {fullName}<br/>
-          Programming Experience {programmimngExp} Years;
-        </div>
-      </div>
-    </div>
-  )
 }
 
 function Footer(){
