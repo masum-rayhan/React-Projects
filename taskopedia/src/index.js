@@ -26,14 +26,17 @@ function Header(){
 function MainBody(){
 
   const whatWeWillLearn = "React JS";
+  const totalLecture = 3;
 
   return(
     <div>
       <p className='text-primary'>In this course, we will learn {whatWeWillLearn}!</p>
+      <p>total Lecture - {totalLecture}</p>
       <ul>
         <li className='heading1'>Call Ben</li>
         <li>Go to walmart</li>
       </ul>
+      <div>Enter Task <input maxLength={10} readOnly={true} placeholder={"Rayhan"}></input></div>
     </div>
   );
 }
