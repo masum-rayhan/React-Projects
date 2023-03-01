@@ -4,6 +4,7 @@ import "./CSS/style.css";
 import Header from './Header';
 import Students from './Student';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function MainBody(){
@@ -31,9 +32,18 @@ root.render(
     <Header/>
     <MainBody/>
     <div className="row">Student Enrolled</div>
-    <Students experience = {1.2} name ={"Masum Rayhan"}/>
-    <Students experience = {1} name ={"Shohidujjaman Sajib"}/>
-    <Students experience = {4} name ={"Mokarram"}/>
+    <Students 
+      experience = {1.2} 
+      name ={"Masum Rayhan"} 
+      headshot="https://api.lorem.space/image/face?w=150&h=150" />
+    <Students 
+      experience = {1} 
+      name ={"Shohidujjaman Sajib"}
+      headshot="https://api.lorem.space/image/face?w=150&h=150"/>
+    <Students 
+      experience = {4} 
+      name ={"Mokarram"}
+      headshot="https://api.lorem.space/image/face?w=150&h=150"/>
     <Footer/>
   </div>
 );
