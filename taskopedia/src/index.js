@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import "./CSS/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -27,7 +28,7 @@ function MainBody(){
     <div>
       <p className='text-primary'>In this course, we will learn TaskOPedia!</p>
       <ul>
-        <li>Call Ben</li>
+        <li className='heading1'>Call Ben</li>
         <li>Go to walmart</li>
       </ul>
     </div>
