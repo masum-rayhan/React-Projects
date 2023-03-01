@@ -16,10 +16,9 @@ function MainBody(){
       <p className='text-primary'>In this course, we will learn {whatWeWillLearn}!</p>
       <p>total Lecture - {totalLecture}</p>
       <ul>
-        <li className='heading1'>Call Ben</li>
-        <li>Go to walmart</li>
+        <li>Basic Foundation</li>
+        <li>Functional and Class Components</li>
       </ul>
-      <div>Enter Task <input maxLength={10} readOnly={true} placeholder={"Rayhan"}></input></div>
     </div>
   );
 }
@@ -28,10 +27,13 @@ function Footer(){
   return <p>Happy Coading!</p>;
 }
 root.render(
-  <div>
+  <div className='container'>
     <Header/>
     <MainBody/>
-    <Students/>
+    <div className="row">Student Enrolled</div>
+    <Students experience = {1.2} name ={"Masum Rayhan"}/>
+    <Students experience = {1} name ={"Shohidujjaman Sajib"}/>
+    <Students experience = {4} name ={"Mokarram"}/>
     <Footer/>
   </div>
 );
