@@ -37,6 +37,9 @@ function MainBody() {
         <li>Basic Foundation</li>
         <li>Functional & Class Components</li>
       </ul>
+      <div>
+        Enter Task : <input maxLength={5} readOnly={false} placeholder="Add New Course?"></input>
+      </div>
     </div>
   );
 }
