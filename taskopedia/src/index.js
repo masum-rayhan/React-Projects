@@ -6,8 +6,12 @@ function MainHeader() {
   return <h1>React Course</h1>;
 }
 
+const subHeaderStyle = {
+  color:"blueviolet",
+  backgroundColor:"lightgray"
+}
 function SubHeader() {
-  return <p>This will be an exciting course.</p>;
+  return <p style={subHeaderStyle}>This will be an  exciting course.</p>;
 }
 
 function Header() {
@@ -32,7 +36,7 @@ function MainBody() {
 }
 
 function Footer() {
-  return <div>Happy Coading!</div>;
+  return <p style={{color:"gray",backgroundColor:"black"}}>Happy Coading!</p>;
 }
 
 root.render(
