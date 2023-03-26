@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./CSS/style.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 function MainHeader() {
-  return <h1 className="text-primary">React Course</h1>;
+  return <h1 className="heading1">React Course</h1>;
 }
 
 const subHeaderStyle = {
