@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 function MainHeader() {
-  return <h1>React Course</h1>;
+  return <h1 className="text-primary">React Course</h1>;
 }
 
 const subHeaderStyle = {
