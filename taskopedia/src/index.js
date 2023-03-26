@@ -27,10 +27,12 @@ function Header() {
 function MainBody() {
 
   const whatWeWillLearn = "React JS";
+  const totalLecture = 3;
 
   return (
     <div>
-      <p>In this course, we will learn {whatWeWillLearn} by building TaskOpedia!</p>
+      <p>In this course, we will learn {whatWeWillLearn} by building TaskOpedia!</p> <br/>
+      <p>Total Lecture - {totalLecture}</p>
       <ul>
         <li>Basic Foundation</li>
         <li>Functional & Class Components</li>
