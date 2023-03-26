@@ -11,6 +11,7 @@ const subHeaderStyle = {
   color: "blueviolet",
   backgroundColor: "lightgray",
 };
+
 function SubHeader() {
   return <p style={subHeaderStyle}>This will be an exciting course.</p>;
 }
@@ -53,7 +54,7 @@ function Students() {
     <div className="container p-4">
       <div className="row">Students Enrolled</div>
       <div className="row border">
-        <div className="col-2">
+        <div className="col-2"> 
           <img 
           src={`https://ui-avatars.com/api/?name=${fullName}`} 
           alt="UI-Avatars"
