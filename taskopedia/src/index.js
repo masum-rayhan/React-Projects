@@ -2,10 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-function Header(){
+function MainHeader() {
+  return <h1>React Course</h1>;
+}
+
+function SubHeader() {
+  return <p>This will be an exciting course.</p>;
+}
+
+function Header() {
   return (
-    <div>React Course</div>
-  )
+    <div>
+      <MainHeader />
+      <SubHeader />
+    </div>
+  );
 }
 
 function MainBody() {
@@ -20,16 +31,14 @@ function MainBody() {
   );
 }
 
-function Footer(){
-  return (
-    <div>Happy Coading!</div>
-  )
+function Footer() {
+  return <div>Happy Coading!</div>;
 }
 
 root.render(
   <div>
-    <Header/>
-    <MainBody/>
-    <Footer/>
+    <Header />
+    <MainBody />
+    <Footer />
   </div>
 );
