@@ -4,11 +4,11 @@ export default function Students(props) {
         <div className="row border">
           <div className="col-2"> 
             <img 
-            src={`https://ui-avatars.com/api/?name=${props.name}`} 
+            src={props.headshot}
             alt="UI-Avatars"
-            className="w-100"></img>
+            className="w-100 py-2"></img>
           </div> 
-          <div className="col-10">
+          <div className="col-10">  
             {props.name} <br/>
             Programming Experiance: {props.experience} Years.
           </div>
