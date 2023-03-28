@@ -35,10 +35,10 @@ function Footer() {
 }
 
 root.render(
-  <div className="container">
+  <div className="">
     <Header />
     <MainBody />
-    <div className="row">Students Enrolled</div>
+    <div className="container row">Students Enrolled</div>
     <Students
       experience={1.5}
       name="Kris Wally"
