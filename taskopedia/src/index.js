@@ -7,7 +7,6 @@ import Students from "./Student";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function MainBody() {
-
   const whatWeWillLearn = "React JS";
   const totalLecture = 3;
 
@@ -40,14 +39,21 @@ root.render(
     <Header />
     <MainBody />
     <div className="row">Students Enrolled</div>
-    <Students experience = {1.5} name = "Kris Wally"/>
-    <Students experience = {1} name = "Angel Patric"/>
-    <Students experience = {5} name = "Rene Parker"/>
+    <Students
+      experience={1.5}
+      name="Kris Wally"
+      headshot="https://api.lorem.space/image/face?w=150&h=151"
+    />
+    <Students
+      experience={1}
+      name="Angel Patric"
+      headshot="https://api.lorem.space/image/face?w=150&h=152"
+    />
+    <Students
+      experience={5}
+      name="Rene Parker"
+      headshot="https://api.lorem.space/image/face?w=150&h=150"
+    />
     <Footer />
   </div>
 );
-
-
-
-
-
