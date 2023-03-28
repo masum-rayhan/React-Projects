@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./CSS/style.css";
-import Header from "./header";
-import Students from "./student";
+import Header from "./Header";
+import Students from "./Student";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function MainBody() {
+
   const whatWeWillLearn = "React JS";
   const totalLecture = 3;
 
