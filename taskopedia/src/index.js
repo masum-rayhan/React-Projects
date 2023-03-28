@@ -1,29 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./CSS/style.css";
+import Header from "./header";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-function MainHeader() {
-  return <h1 className="heading1">React Course</h1>;
-}
-
-const subHeaderStyle = {
-  color: "blueviolet",
-  backgroundColor: "lightgray",
-};
-
-function SubHeader() {
-  return <p style={subHeaderStyle}>This will be an exciting course.</p>;
-}
-
-function Header() {
-  return (
-    <div>
-      <MainHeader />
-      <SubHeader />
-    </div>
-  );
-}
 
 function MainBody() {
   const whatWeWillLearn = "React JS";
@@ -83,3 +63,8 @@ root.render(
     <Footer />
   </div>
 );
+
+
+
+
+
