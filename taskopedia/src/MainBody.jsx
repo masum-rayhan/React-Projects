@@ -20,7 +20,9 @@ class MainBody extends React.Component {
           <li>Basic Foundation</li>
           <li>Functional & Class Components</li>
         </ul>
+        
         <div className="container row">Students Enrolled</div>
+
         <Students
           experience={1.5}
           name="Kris Wally"
