@@ -1,4 +1,4 @@
-export default function StudentReview() {
+const StudentReview = () => {
   return (
     <div className="p-2">
       <i class="bi bi-hand-thumbs-up-fill text-success p-1"></i>
@@ -6,3 +6,4 @@ export default function StudentReview() {
     </div>
   );
 }
+export default StudentReview;
