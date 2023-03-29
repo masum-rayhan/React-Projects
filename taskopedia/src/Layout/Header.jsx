@@ -15,7 +15,7 @@ function MainHeader() {
   };
   
   function SubHeader() {
-    return <p style={subHeaderStyle}>This will be an exciting course.</p>;
+    return <p style={subHeaderStyle} className="text-center">This will be an exciting course.</p>;
   }
   
   export default function Header() {
