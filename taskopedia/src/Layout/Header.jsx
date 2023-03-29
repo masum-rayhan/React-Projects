@@ -14,7 +14,7 @@ const MainHeader = () => {
     backgroundColor: "lightgray",
   };
   
-  function SubHeader() {
+  const SubHeader = () => {
     return <p style={subHeaderStyle} className="text-center">This will be an exciting course.</p>;
   }
   
