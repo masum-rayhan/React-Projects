@@ -7,7 +7,7 @@ class Counter extends React.Component {
       count: 0
     }
   }
-
+   
   handlerAttack() {
     alert("Attack");
   }
@@ -19,7 +19,7 @@ class Counter extends React.Component {
   render() {
     return (
       <div className="row text-white">
-        <h1>Counter:{this.state.count} </h1>
+        <h1>Counter: {this.state.count} </h1>
         <button onClick={this.handlerAttack} style={{ width: "200px" }}>
           +1
         </button>
