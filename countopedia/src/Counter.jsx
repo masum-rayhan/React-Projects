@@ -1,19 +1,22 @@
 import React from "react";
 class Counter extends React.Component {
-
   constructor(props) {
     super(props);
+    this.handlerAttack = this.handlerAttack.bind(this);
+    this.handlerDefence = this.handlerDefence.bind(this);
     this.state = {
-      count: 0
-    }
+      count: 0,
+    };
   }
-   
+
   handlerAttack() {
-    alert("Attack");
+    // alert("Attack");
+    this.setState({ count: this.state.count + 1});
   }
 
   handlerDefence() {
-    alert("Defend");
+    // alert("Defend");
+    this.setState({ count: this.state.count - 1});
   }
 
   render() {
