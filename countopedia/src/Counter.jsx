@@ -12,13 +12,11 @@ class Counter extends React.Component {
     this.setState((previuosState) => ({
       count: previuosState.count + 1,
     }))
-    // this.setState({ count: this.state.count + 1 });
   }
   handlerDefence() {
     this.setState((previousState) => ({
       count: previousState.count - 1,
     }))
-    // this.setState({ count: this.state.count - 1 });
   }
   render() {
     return (
