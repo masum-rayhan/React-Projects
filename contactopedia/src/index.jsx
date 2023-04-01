@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import Header from "./Header";
+import Header from "./Components/Layout/Header.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
