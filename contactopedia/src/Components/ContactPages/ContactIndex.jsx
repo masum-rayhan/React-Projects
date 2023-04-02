@@ -49,21 +49,27 @@ class ContactIndex extends React.Component {
               <RemoveAllContact />
             </div>
             <div className="row py-2">
-              <AddContact />
+              <div className="row col-8 offset-2">
+                <AddContact />
+              </div>
             </div>
             <div className="row py-2">
-              <FavoriteContacts
-                contacts={this.state.contactList.filter(
-                  (u) => u.isFavorite === true
-                )}
-              />
+              <div className="row col-8 offset-2">
+                <FavoriteContacts
+                  contacts={this.state.contactList.filter(
+                    (u) => u.isFavorite === true
+                  )}
+                />
+              </div>
             </div>
             <div className="row py-2">
-              <GeneralContacts
-                contacts={this.state.contactList.filter(
-                  (u) => u.isFavorite === false
-                )}
-              />
+              <div className="row col-8 offset-2">
+                <GeneralContacts
+                  contacts={this.state.contactList.filter(
+                    (u) => u.isFavorite === false
+                  )}
+                />
+              </div>
             </div>
           </div>
         </div>

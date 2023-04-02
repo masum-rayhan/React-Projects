@@ -1,7 +1,7 @@
 const AddContact = () => {
   return (
     <div className="border text-white p-2">
-      <div className="row">
+      <div className="row p-2">
         <div className="col-12 text-white-50">Add a new contact</div>
         <div className="col-12 col-md-4 p-1">
           <input
