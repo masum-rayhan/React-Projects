@@ -1,7 +1,14 @@
+import { getRandomUser } from "../../Util/api";
+
+const GetRandomContact = async () => {
+ const responseFromApi = await getRandomUser(); 
+ console.log(responseFromApi);  
+};
+
 const AddRandomContact = () => {
     return(
         <div>
-            <button className="btn btn-danger form-control">Add Random Contact</button>
+            <button className="btn btn-success form-control" onClick = {() => GetRandomContact()} >Add Random Contact</button>
         </div>
     )
 }
