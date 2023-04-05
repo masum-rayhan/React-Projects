@@ -107,7 +107,7 @@ class ContactIndex extends React.Component {
         <div className="container" style={{ minHeight: "85vh" }}>
           <div className="row py-3">
             <div className="col-4 offset-2 row">
-              <AddRandomContact handleAddRandomContact = {this.handleAddContact}/>
+              <AddRandomContact handleAddRandomContact = {this.handleAddRandomContact}/>
             </div>
             <div className="col-4 row">
               <RemoveAllContact />

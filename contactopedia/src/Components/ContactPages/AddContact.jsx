@@ -71,7 +71,7 @@ class AddContact extends React.Component {
             {this.state.successMessage === undefined ? (
               <div></div>
             ) : (
-              <div className="col-12 text-center text-danger">
+              <div className="col-12 text-center text-success">
                 {this.state.successMessage}
               </div>
             )}
