@@ -33,12 +33,18 @@ const Contact = (props) => {
 
       <div className="col-2 col-md-2 pt-md-3">
         <button className="btn btn-sm m-1 btn-outline-primary">
-          <i class="bi bi-pencil-square" style={{ fontSize: "1rem" }}></i>
+          <i
+            class="bi bi-pencil-square"
+            style={{ fontSize: "1rem" }}
+            onClick={() => props.updateClick(props.contact)}
+          ></i>
         </button>
         <button className="btn btn-sm m-1 btn-outline-danger">
-          <i class="bi bi-trash-fill" 
-          onClick={() => props.deleteContact(props.contact.id)}
-          style={{ fontSize: "1rem" }}></i>
+          <i
+            class="bi bi-trash-fill"
+            onClick={() => props.deleteContact(props.contact.id)}
+            style={{ fontSize: "1rem" }}
+          ></i>
         </button>
       </div>
     </div>
