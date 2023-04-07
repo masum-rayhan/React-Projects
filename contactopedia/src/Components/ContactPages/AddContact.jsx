@@ -15,12 +15,24 @@ class AddContact extends React.Component {
     const name = e.target.elements.contactName.value.trim();
     const email = e.target.elements.contactEmail.value.trim();
     const phone = e.target.elements.contactPhone.value.trim();
+    const id = e.target.elements.contactId.value.trim();
 
-    const response = this.props.handleAddContact({
-      name: name,
-      email: email,
-      phone: phone,
-    });
+    let response = undefined;
+
+    if (this.props.isUpdating) {      
+      response = this.props.handleUpdateContact({
+        name: name,
+        email: email,
+        phone: phone,
+        id: id,
+      });
+    } else {
+      response = this.props.handleAddContact({
+        name: name,
+        email: email,
+        phone: phone,
+      });
+    }
 
     if (response.status === "success") {
       this.setState({ successMessage: response.msg, errorMassage: undefined });
@@ -32,7 +44,7 @@ class AddContact extends React.Component {
 
   cancelContact = () => {
     this.props.cancelUpdateContact();
-  }
+  };
 
   render() {
     return (
@@ -41,6 +53,13 @@ class AddContact extends React.Component {
           onSubmit={this.handleAddContactFormSubmit}
           className="contact-form"
         >
+          <input
+            hidden
+            name="contactId"
+            defaultValue={
+              this.props.isUpdating ? this.props.selectedContact.id : ""
+            }
+          ></input>
           <div className="row p-2">
             <div className="col-12 text-white-50">
               {this.props.isUpdating ? "Update Contact" : "Add a new contact"}
@@ -103,7 +122,10 @@ class AddContact extends React.Component {
             </div>
             <div className="col-6 col-md-4 p-1">
               {this.props.isUpdating && (
-                <button className="btn btn-sm btn-secondary form-control" onClick={this.cancelContact}>
+                <button
+                  className="btn btn-sm btn-secondary form-control"
+                  onClick={this.cancelContact}
+                >
                   Cancel
                 </button>
               )}
