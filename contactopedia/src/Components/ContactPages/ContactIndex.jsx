@@ -35,7 +35,7 @@ class ContactIndex extends React.Component {
         },
       ],
       selectedContact: undefined,
-      isUpdatingt: false,
+      isUpdating: false,
     };
   }
 
@@ -81,23 +81,23 @@ class ContactIndex extends React.Component {
 
   handleUpdateClick = (contact) => {
     console.log(contact);
-    this.setState(((prevState) => {
+    this.setState((prevState) => {
       return {
         selectedContact: contact,
-        isUpdatingt: true,
-      }
-    }))
-  }
+        isUpdating: true,
+      };
+    });
+  };
 
   handleDeleteContact = (contactId) => {
-    this.setState((prevState) =>{
-      return{
+    this.setState((prevState) => {
+      return {
         contactList: prevState.contactList.filter((x) => {
           return x.id !== contactId;
-        })
-      }
-    })
-  }
+        }),
+      };
+    });
+  };
 
   handleRemoveAllContact = (contact) => {
     this.setState((prevState) => {
@@ -105,7 +105,7 @@ class ContactIndex extends React.Component {
         contactList: [],
       };
     });
-  }
+  };
 
   handleAddRandomContact = (newContact) => {
     const newFinalContact = {
@@ -118,7 +118,7 @@ class ContactIndex extends React.Component {
         contactList: prevState.contactList.concat(newFinalContact),
       };
     });
-  }
+  };
 
   render() {
     return (
@@ -127,14 +127,22 @@ class ContactIndex extends React.Component {
         <div className="container" style={{ minHeight: "85vh" }}>
           <div className="row py-3">
             <div className="col-4 offset-2 row">
-              <AddRandomContact handleAddRandomContact = {this.handleAddContact}/>
+              <AddRandomContact
+                handleAddRandomContact={this.handleAddContact}
+              />
             </div>
             <div className="col-4 row">
-              <RemoveAllContact handleRemoveAllContact = {this.handleRemoveAllContact} />
+              <RemoveAllContact
+                handleRemoveAllContact={this.handleRemoveAllContact}
+              />
             </div>
             <div className="row py-2">
               <div className="row col-8 offset-2">
-                <AddContact handleAddContact={this.handleAddContact} />
+                <AddContact
+                  isUpdating={this.state.isUpdating}
+                  selectedContact={this.state.selectedContact}
+                  handleAddContact={this.handleAddContact}
+                />
               </div>
             </div>
             <div className="row py-2">
@@ -145,7 +153,7 @@ class ContactIndex extends React.Component {
                   )}
                   favoriteClick={this.handleToggleFavorites}
                   deleteContact={this.handleDeleteContact}
-                  updateClick = {this.handleUpdateClick}
+                  updateClick={this.handleUpdateClick}
                 />
               </div>
             </div>
@@ -157,7 +165,7 @@ class ContactIndex extends React.Component {
                   )}
                   favoriteClick={this.handleToggleFavorites}
                   deleteContact={this.handleDeleteContact}
-                  updateClick = {this.handleUpdateClick}
+                  updateClick={this.handleUpdateClick}
                 />
               </div>
             </div>
