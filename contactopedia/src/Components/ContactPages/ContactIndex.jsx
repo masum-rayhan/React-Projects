@@ -34,6 +34,8 @@ class ContactIndex extends React.Component {
           isFavorite: true,
         },
       ],
+      selectedContact: undefined,
+      isUpdating: false,
     };
   }
 
@@ -77,15 +79,69 @@ class ContactIndex extends React.Component {
     }));
   };
 
+  handleUpdateContact = (updateContact) => {
+    console.log(updateContact);
+    if (updateContact.name === "") {
+      return { status: "failur", msg: "Name is required" };
+    } else if (updateContact.phone === "") {
+      return { status: "failur", msg: "Phone is required" };
+    }
+
+    this.setState((prevState) => ({
+      contactList: prevState.contactList.map((obj) => {
+        if (obj.id === Number(updateContact.id)) {
+          
+          return {
+            ...obj,
+            name: updateContact.name,
+            email: updateContact.email,
+            phone: updateContact.phone,
+          };
+        }
+        return obj;
+      }),
+      isUpdating: false,
+      selectedContact: undefined,
+    }));
+    return { status: "success", msg: "Contact was updated successfully" };
+  };
+
+  handleUpdateClick = (contact) => {
+    console.log(contact);
+    this.setState((prevState) => {
+      return {
+        selectedContact: contact,
+        isUpdating: true,
+      };
+    });
+  };
+
+  handleCancelUpdateClick = () => {
+    this.setState((prevState) => {
+      return {
+        selectedContact: undefined,
+        isUpdating: false,
+      };
+    });
+  };
+
   handleDeleteContact = (contactId) => {
-    this.setState((prevState) =>{
-      return{
+    this.setState((prevState) => {
+      return {
         contactList: prevState.contactList.filter((x) => {
           return x.id !== contactId;
-        })
-      }
-    })
-  }
+        }),
+      };
+    });
+  };
+
+  handleRemoveAllContact = (contact) => {
+    this.setState((prevState) => {
+      return {
+        contactList: [],
+      };
+    });
+  };
 
   handleAddRandomContact = (newContact) => {
     const newFinalContact = {
@@ -98,7 +154,7 @@ class ContactIndex extends React.Component {
         contactList: prevState.contactList.concat(newFinalContact),
       };
     });
-  }
+  };
 
   render() {
     return (
@@ -107,14 +163,24 @@ class ContactIndex extends React.Component {
         <div className="container" style={{ minHeight: "85vh" }}>
           <div className="row py-3">
             <div className="col-4 offset-2 row">
-              <AddRandomContact handleAddRandomContact = {this.handleAddRandomContact}/>
+              <AddRandomContact
+                handleAddRandomContact={this.handleAddContact}
+              />
             </div>
             <div className="col-4 row">
-              <RemoveAllContact />
+              <RemoveAllContact
+                handleRemoveAllContact={this.handleRemoveAllContact}
+              />
             </div>
             <div className="row py-2">
               <div className="row col-8 offset-2">
-                <AddContact handleAddContact={this.handleAddContact} />
+                <AddContact
+                  isUpdating={this.state.isUpdating}
+                  selectedContact={this.state.selectedContact}
+                  handleAddContact={this.handleAddContact}
+                  cancelUpdateContact={this.handleCancelUpdateClick}
+                  handleUpdateContact={this.handleUpdateContact}
+                />
               </div>
             </div>
             <div className="row py-2">
@@ -125,6 +191,7 @@ class ContactIndex extends React.Component {
                   )}
                   favoriteClick={this.handleToggleFavorites}
                   deleteContact={this.handleDeleteContact}
+                  updateClick={this.handleUpdateClick}
                 />
               </div>
             </div>
@@ -136,6 +203,7 @@ class ContactIndex extends React.Component {
                   )}
                   favoriteClick={this.handleToggleFavorites}
                   deleteContact={this.handleDeleteContact}
+                  updateClick={this.handleUpdateClick}
                 />
               </div>
             </div>
